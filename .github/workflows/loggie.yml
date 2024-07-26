@@ -17,7 +17,7 @@ jobs:
           docker version
           # 登录阿里云镜像仓库
           docker login --username=${{ secrets.ALIYUN_DOCKER_USERNAME }} --password=${{ secrets.ALIYUN_DOCKER_PASSWORD }} registry.cn-hangzhou.aliyuncs.com
-          docker pull hubimage/filebeat:7.17.5
-          docker tag hubimage/filebeat:7.17.5 registry.cn-hangzhou.aliyuncs.com/jlgu/es:filebeat7.17.5
-          docker push registry.cn-hangzhou.aliyuncs.com/jlgu/es:filebeat7.17.5
+          docker pull alpine:3.6
+          docker tag alpine:3.6 registry.cn-hangzhou.aliyuncs.com/jlgu/es:alpine3.6
+          docker push registry.cn-hangzhou.aliyuncs.com/jlgu/es:alpine3.6
           # skopeo copy --all docker://registry.hub.docker.com/loggieio/loggie:v1.4.0 docker://registry.cn-hangzhou.aliyuncs.com/jlgu/loggie:v1.4.0
