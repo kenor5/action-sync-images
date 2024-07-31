@@ -9,10 +9,10 @@ jobs:
       steps:
       - name: Checkout Repos
         uses: actions/checkout@v3
-        
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2.9.1
-  
+
       - name: Use Skopeo Tools Sync Image to Docker Hub
         run: |
           #!/usr/bin/env bash
@@ -20,6 +20,5 @@ jobs:
           # 登录阿里云镜像仓库
           docker login --username=${{ secrets.ALIYUN_DOCKER_USERNAME }} --password=${{ secrets.ALIYUN_DOCKER_PASSWORD }} registry.cn-hangzhou.aliyuncs.com
           docker pull busybox:latest
-          docker tag busybox:latest registry.cn-hangzhou.aliyuncs.com/jlgu/es:busybox
-          docker push registry.cn-hangzhou.aliyuncs.com/jlgu/es:busybox
-          # skopeo copy --all docker://registry.hub.docker.com/loggieio/loggie:v1.4.0 docker://registry.cn-hangzhou.aliyuncs.com/jlgu/loggie:v1.4.0
+          docker tag busybox:latest registry.cn-hangzhou.aliyuncs.com/jlgu/es:busybox-latest
+          docker push registry.cn-hangzhou.aliyuncs.com/jlgu/es:busybox-latest
