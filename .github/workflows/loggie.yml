@@ -19,6 +19,6 @@ jobs:
           docker version
           # 登录阿里云镜像仓库
           docker login --username=${{ secrets.ALIYUN_DOCKER_USERNAME }} --password=${{ secrets.ALIYUN_DOCKER_PASSWORD }} registry.cn-hangzhou.aliyuncs.com
-          docker pull python:3.6.8
-          docker tag python:3.6.8 registry.cn-hangzhou.aliyuncs.com/jlgu/es:python-3.6.8
-          docker push registry.cn-hangzhou.aliyuncs.com/jlgu/es:python-3.6.8
+          docker pull kubernetesui/dashboard:v2.7.0
+          docker tag kubernetesui/dashboard:v2.7.0 registry.cn-hangzhou.aliyuncs.com/jlgu/es:dashboard-v2.7.0
+          docker push registry.cn-hangzhou.aliyuncs.com/jlgu/es:dashboard-v2.7.0
